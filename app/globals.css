@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+.animate-progress {
+  animation: progress 3s linear forwards;
+}
+
+/* Scroll snapping */
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.about-snap {
+  scroll-snap-align: start;
+}
+
+/* Parallelogram left-leaning */
+.parallelogram-left {
+  border: 3px solid #00ffff;
+  transform: skewX(-12deg);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+}
+
+/* Parallelogram right-leaning */
+.parallelogram-right {
+  border: 3px solid #00ffff;
+  transform: skewX(12deg);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+}
+
+/* Parallelogram image blocks */
+.image-para {
+  border: 3px solid #00ffff;
+  transform: skewX(-12deg);
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
